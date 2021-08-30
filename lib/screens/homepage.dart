@@ -18,12 +18,41 @@ class Homepage extends StatelessWidget {
             padding: EdgeInsets.only(
               left: width * 0.1,
             ),
-            child: Container(
-              decoration: BoxDecoration(shape: BoxShape.circle),
-              height: height * 0.1,
-              width: width * 0.1,
-              child: Image.network(
-                  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"),
+            child: Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(shape: BoxShape.circle),
+                  height: height * 0.1,
+                  width: width * 0.1,
+                  child: Image.network(
+                      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"),
+                ),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "My Location",
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w300,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_downward,
+                          color: Colors.black,
+                        )
+                      ],
+                    ),
+                    Text(
+                      "Cox's Bazar, BD",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    )
+                  ],
+                )
+              ],
             ),
           ),
           actions: [
