@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => DataProvider()),
       ],
       child: MaterialApp(
-        title: 'Real Estate',
+        title: 'Real Estate Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Colors.purple,
