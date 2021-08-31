@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realestateui/models/hotel_category.dart';
 import 'package:realestateui/widgets/custom_icon_button_widget.dart';
 import 'package:realestateui/widgets/mybutton_widget.dart';
 
@@ -7,10 +8,12 @@ class CategoryItemWidget extends StatelessWidget {
     Key? key,
     required this.height,
     required this.width,
+    required this.hotelCategoryData,
   }) : super(key: key);
 
   final double height;
   final double width;
+  final HotelCategory hotelCategoryData;
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +44,7 @@ class CategoryItemWidget extends StatelessWidget {
               ),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(
-                    "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"),
+                image: NetworkImage(hotelCategoryData.imageUrl),
               ),
             ),
           ),
@@ -52,7 +54,7 @@ class CategoryItemWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Modern",
+                  hotelCategoryData.categoryName,
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 20,
@@ -60,7 +62,7 @@ class CategoryItemWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "More than 504,326 House waiting for your rent or buy",
+                  "More than ${hotelCategoryData.totalHotels} House waiting for your rent or buy",
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 15,
@@ -74,7 +76,11 @@ class CategoryItemWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MyButtonWidget(height: height, width: width),
+                MyButtonWidget(
+                  height: height,
+                  width: width,
+                  data: hotelCategoryData.pricePerMonth,
+                ),
                 CustomIconButton(width: width, height: height)
               ],
             ),

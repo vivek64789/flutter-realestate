@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 class MyButtonWidget extends StatelessWidget {
   const MyButtonWidget({
     Key? key,
+    required this.data,
     required this.height,
     required this.width,
   }) : super(key: key);
-
+  final int data;
   final double height;
   final double width;
 
@@ -26,7 +27,7 @@ class MyButtonWidget extends StatelessWidget {
         height: height * 0.05,
         width: width * 0.5,
         child: Text(
-          "from \$30/month",
+          "from $data/month",
           style: TextStyle(
             fontFamily: "Poppins",
             fontWeight: FontWeight.bold,

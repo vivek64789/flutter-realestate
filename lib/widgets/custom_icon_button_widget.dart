@@ -16,7 +16,7 @@ class CustomIconButton extends StatelessWidget {
       splashColor: Theme.of(context).primaryColor,
       onTap: () {},
       child: Container(
-        decoration: BoxDecoration(
+          decoration: BoxDecoration(
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
